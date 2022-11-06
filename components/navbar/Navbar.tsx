@@ -19,7 +19,7 @@ const Navbar = () => {
           ))}
         </ul>
         <button className="pl-12 pr-8">Login</button>
-        <button className="mx-10 px-6 py-2 rounded border border-black">
+        <button className="mx-8 px-6 py-2 rounded border border-black">
           Sign up
         </button>
         <select className="bg-transparent" name="" id="">

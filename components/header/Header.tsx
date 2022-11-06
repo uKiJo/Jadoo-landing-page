@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
+import CustomButton from '../custom-button/CustomButton';
 import heroImage from '../../public/Group 590.svg';
+
+import { RiPlayCircleFill } from 'react-icons/ri';
 
 const Header: React.FC = () => {
   return (
@@ -13,14 +16,23 @@ const Header: React.FC = () => {
           Travel, <span className="enjoy">enjoy</span> and live a new and full
           life
         </span>
-        <p className="text-paragraph text-base font-normal block w-[477px]">
+        <p className="text-paragraph text-base font-normal block w-[477px] mb-8">
           Built Wicket longer admire do barton vanity itself do in it. Preferred
           to sportsmen it engrossed listening. Park gate sell they west hard for
           the.
         </p>
+        <div className="flex">
+          <CustomButton styling="bg-yellow py-4 px-6 rounded-lg text-sm text-white mr-8">
+            Find out more
+          </CustomButton>
+          <div className="flex items-center cursor-pointer">
+            <RiPlayCircleFill className="fill-heading1 mr-4" size={52} />
+            <span className="text-paragraph">Play Demo</span>
+          </div>
+        </div>
       </div>
       <div className="ml-12">
-        <Image src={heroImage} alt="hero-image" width={700} />
+        <Image src={heroImage} alt="hero-image" />
       </div>
     </header>
   );

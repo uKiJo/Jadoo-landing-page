@@ -12,6 +12,7 @@ module.exports = {
         heading1: '#DF6951',
         heading2: '#181E4B',
         paragraph: '#5E6282',
+        yellow: '#F1A501',
       },
       fontFamily: {
         google: 'Product Sans, sans-serif',

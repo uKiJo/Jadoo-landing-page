@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Header from '../components/header/Header';
 import Navbar from '../components/navbar/Navbar';
 import styles from '../styles/Home.module.css';
+import Header from '../components/header/Header';
 
 export default function Home() {
   return (
