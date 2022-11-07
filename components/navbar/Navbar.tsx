@@ -6,14 +6,14 @@ const navbarItems = ['Destinations', 'Hotels', 'Flights', 'Bookings'];
 
 const Navbar = () => {
   return (
-    <nav className="mt-12 mb-6 mx-auto w-4/5 justify-between flex items-center font-semibold text-primary">
+    <nav className="mt-12 mb-6 mx-auto w-4/5  justify-between flex items-center font-semibold text-primary">
       <div>
         <Image src={Logo} alt="jadoo-logo" />
       </div>
       <div className="flex font-google">
         <ul className="flex items-center">
           {navbarItems.map((item) => (
-            <li className="px-8" key={item}>
+            <li className="px-8 cursor-pointer" key={item}>
               {item}
             </li>
           ))}
