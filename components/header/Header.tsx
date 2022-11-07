@@ -22,11 +22,14 @@ const Header: React.FC = () => {
           the.
         </p>
         <div className="flex">
-          <CustomButton styling="bg-yellow py-4 px-6 rounded-lg text-sm text-white mr-8">
+          <CustomButton styling="bg-yellow py-4 px-6 rounded-lg text-sm text-white mr-8 find-btn">
             Find out more
           </CustomButton>
           <div className="flex items-center cursor-pointer">
-            <RiPlayCircleFill className="fill-heading1 mr-4" size={52} />
+            <RiPlayCircleFill
+              className="fill-heading1 mr-4 play-btn"
+              size={52}
+            />
             <span className="text-paragraph font-normal">Play Demo</span>
           </div>
         </div>
