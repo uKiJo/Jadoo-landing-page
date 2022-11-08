@@ -13,11 +13,11 @@ interface CardProps {
 const Card: React.FC<CardProps> = (props) => {
   const { image, place, price, day } = props;
   return (
-    <div className="flex flex-col h-[457px] w-80 mb-4 mr-10  rounded-3xl card-shadow font-poppins text-paragraph">
+    <div className="flex flex-col h-[457px] w-80 mb-4 mr-12 rounded-3xl card-shadow font-poppins text-paragraph">
       <div className="h-[73%] overflow-hidden">
         <Image className="w-full object-cover" src={image} alt={place} />
       </div>
-      <div className="flex flex-col font-medium justify-center grow p-4">
+      <div className="flex flex-col font-medium justify-center grow p-6">
         <div className="mb-4 flex justify-between text-lg">
           <span>{place}</span>
           <span>${price}k</span>

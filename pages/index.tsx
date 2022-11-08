@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/header/Header';
 import Services from '../components/services/Services';
 import Destinations from '../components/destinations/Destinations';
+import Book from '../components/book/Book';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Header />
         <Services />
         <Destinations />
+        <Book />
       </main>
 
       <footer className={styles.footer}></footer>

@@ -9,7 +9,7 @@ interface DestinationsProps {}
 
 const Destinations: React.FC<DestinationsProps> = (props) => {
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center mb-48">
       <Subtitle>Top Selling</Subtitle>
       <Title>Top Destinations</Title>
       <div className="flex justify-center bg2">
