@@ -1,5 +1,7 @@
 import React from 'react';
 import Category from '../category/Category';
+import Subtitle from '../shared/Subtitle';
+import Title from '../shared/Title';
 
 import data from './data';
 
@@ -7,13 +9,9 @@ interface ServicesProps {}
 
 const Services: React.FC<ServicesProps> = (props) => {
   return (
-    <section className="text-center bg">
-      <h2 className="font-poppins font-bold text-paragraph uppercase mb-4">
-        Category
-      </h2>
-      <h1 className="font-volkhov text-5xl text-heading2 mb-16">
-        We Offer Best Services
-      </h1>
+    <section className="text-center mb-24 bg">
+      <Subtitle>Category</Subtitle>
+      <Title>We Offer Best Services</Title>
       <div className="flex justify-center">
         {data.map((category) => (
           <Category key={category.id} {...category} />

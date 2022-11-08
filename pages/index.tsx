@@ -3,6 +3,7 @@ import Navbar from '../components/navbar/Navbar';
 import styles from '../styles/Home.module.css';
 import Header from '../components/header/Header';
 import Services from '../components/services/Services';
+import Destinations from '../components/destinations/Destinations';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Navbar />
         <Header />
         <Services />
+        <Destinations />
       </main>
 
       <footer className={styles.footer}></footer>

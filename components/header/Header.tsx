@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   return (
     <header className="flex justify-center w-4/5 mx-auto mb-24">
       <div className="font-poppins flex flex-col justify-center">
-        <h2 className="text-heading1 uppercase mb-6">
+        <h2 className="text-heading1 font-bold uppercase mb-6">
           Best Destinations around the world
         </h2>
         <span className="font-volkhov text-6xl w-[545px] font-bold text-heading2 block mb-7">
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
               className="fill-heading1 mr-4 play-btn"
               size={52}
             />
-            <span className="text-paragraph font-normal">Play Demo</span>
+            <span className="text-paragraph font-medium">Play Demo</span>
           </div>
         </div>
       </div>
