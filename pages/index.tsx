@@ -5,6 +5,7 @@ import Header from '../components/header/Header';
 import Services from '../components/services/Services';
 import Destinations from '../components/destinations/Destinations';
 import Book from '../components/book/Book';
+import Testimonials from '../components/testimonials/Testimonials';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <Destinations />
         <Book />
+        <Testimonials />
       </main>
 
       <footer className={styles.footer}></footer>
