@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import reviewData from './review-data';
+import reviews from './review-data';
 
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
@@ -15,11 +15,8 @@ const Testimonials: React.FC = () => {
   const [[active, next, direction], setActive] = React.useState([0, 1, 0]);
   const [isDisabled, setIsDisabled] = React.useState([false, false]);
 
-  const ind = wrap(0, reviewData.length, active);
-  const nxt = wrap(0, reviewData.length, next);
-
-  // const imageIndex = wrap(0, reviewData.length, activeImage);
-  // const prevIndex = wrap(0, reviewData.length, activeImage + 1);
+  const ind = wrap(0, reviews.length, active);
+  const nxt = wrap(0, reviews.length, next);
 
   console.log('active', ind);
   console.log('next', nxt);
@@ -30,62 +27,73 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="mb-48 p-48 overflow-hidden">
+    <section className="mb-48 p-48 ">
       <div className="flex justify-evenly">
         <div className="w-[409px]">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
           <div className="flex">
-            {reviewData.map((img, i) => (
-              <GoPrimitiveDot
-                key={i}
-                className={`mr-6 h-6 w-6 ${
-                  ind === i ? 'fill-primary' : 'fill-slate-200'
-                }`}
-              />
+            {reviews.map((img, i) => (
+              <motion.div key={i}>
+                <GoPrimitiveDot
+                  className={`mr-6 h-6 w-6 ${
+                    ind === i ? 'fill-primary' : 'fill-slate-200'
+                  }`}
+                />
+              </motion.div>
             ))}
           </div>
         </div>
-        <div className="flex relative  basis-1/3 mb-4">
+        <div className="relative basis-2/5 mb-4">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               layout
               // variants={variants}
               custom={direction}
               transition={{ duration: 0.5 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -100 }}
-              // initial="enter"
-              // animate="center"
-              // exit="exit"
-              // transition={{ duration: 0.5 }}
-              className="absolute z-10"
+              className="absolute z-10 h-48"
               key={ind}
             >
-              <Image
-                className="card-shadow"
-                src={reviewData[ind]}
-                alt={ind.toString()}
-              />
+              <div className="relative w-[541px]">
+                <Image
+                  className="absolute z-10"
+                  src={reviews[ind].avatar}
+                  alt={ind.toString()}
+                />
+                <Image
+                  className="card-shadow rounded-lg absolute top-10 left-10"
+                  src={reviews[ind].message}
+                  alt={ind.toString()}
+                />
+              </div>
             </motion.div>
             <motion.div
               layout
-              variants={variants2}
               custom={direction}
               transition={{ duration: 0.5 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-28 left-10"
+              className="absolute top-28 left-10 h-48"
               key={nxt}
             >
-              <Image
-                // className="border border-stroke"
-                src={reviewData[nxt]}
-                alt={active.toString()}
-                className="bg-heading1 rounded-lg"
-              />
+              <div className="relative w-[541px]">
+                <Image
+                  // className="border border-stroke"
+                  src={reviews[nxt].avatar}
+                  alt={active.toString()}
+                  className=""
+                />
+                <Image
+                  // className="border border-stroke"
+                  src={reviews[nxt].message}
+                  alt={active.toString()}
+                  className="border border-stroke rounded-lg absolute top-10 left-10"
+                />
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -112,16 +120,6 @@ let variants = {
   },
 };
 
-let variants2 = {
-  enter: { y: 0, opacity: 0.2 },
-
-  center: (direction: number) => {
-    return { y: direction > 0 ? -50 : 50, opacity: 1 };
-  },
-  exit: (direction: number) => {
-    return { y: direction * -100, opacity: 0 };
-  },
-};
 export const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;

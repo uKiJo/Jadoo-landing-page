@@ -13,7 +13,7 @@ interface BookProps {}
 
 const Book: React.FC<BookProps> = (props) => {
   return (
-    <section className="mb-24">
+    <section>
       <div className="flex justify-center">
         <div className="w-[511px] mr-28">
           <Subtitle>Easy and Fast</Subtitle>
