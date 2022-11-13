@@ -5,3 +5,26 @@
 .gradient-two {
   background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
 }
+
+.background-right {
+  background-image: url('./assets/decore2.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 152px;
+  height: 166px;
+}
+
+.background-circles {
+  background-image: url('./assets//decore.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left 20px;
+
+}
+
+// .background-upper {
+//   background-image: url('./assets//decore.svg');
+//   background-repeat: no-repeat;
+//   background-position: top right 20px;
+//   opacity: 0.2;
+
+// }

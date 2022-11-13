@@ -7,7 +7,7 @@ interface SponsorsProps {}
 
 const Sponsors: React.FC<SponsorsProps> = (props) => {
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center mb-24">
       <div className="flex justify-between w-section h-[86px] items-center mb-24">
         {logos.map((logo, i) => (
           <div
