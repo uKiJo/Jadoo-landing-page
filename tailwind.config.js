@@ -14,6 +14,7 @@ module.exports = {
         paragraph: '#5E6282',
         yellow: '#F1A501',
         stroke: '#F7F7F7',
+        violet: '#DFD7F9',
       },
       fontFamily: {
         google: 'Product Sans, sans-serif',

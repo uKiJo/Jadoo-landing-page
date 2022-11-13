@@ -4,6 +4,7 @@ import '../components/header/header.scss';
 import '../components/category/category.scss';
 import '../components/services/services.scss';
 import '../components/destinations/destinations.scss';
+import '../components/subscribe/subscribe.scss';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {

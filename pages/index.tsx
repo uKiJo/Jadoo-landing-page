@@ -7,6 +7,7 @@ import Destinations from '../components/destinations/Destinations';
 import Book from '../components/book/Book';
 import Testimonials from '../components/testimonials/Testimonials';
 import Sponsors from '../components/sponsors/Sponsors';
+import Subscribe from '../components/subscribe/Subscribe';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Book />
         <Testimonials />
         <Sponsors />
+        <Subscribe />
       </main>
 
       <footer className={styles.footer}></footer>
