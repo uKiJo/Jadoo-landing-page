@@ -20,6 +20,9 @@ module.exports = {
         poppins: 'Poppins',
         volkhov: 'Volkhov',
       },
+      width: {
+        section: '1100px',
+      },
     },
   },
   plugins: [],

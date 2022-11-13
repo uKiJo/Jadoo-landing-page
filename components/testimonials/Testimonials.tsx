@@ -48,11 +48,16 @@ const Testimonials: React.FC = () => {
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               layout
-              // variants={variants}
               custom={direction}
               transition={{ duration: 0.5 }}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: -100,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               exit={{ opacity: 0, y: -100 }}
               className="absolute z-10 h-48"
               key={ind}
