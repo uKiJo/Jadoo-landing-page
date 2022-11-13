@@ -21,8 +21,9 @@ module.exports = {
         volkhov: 'Volkhov',
       },
       width: {
-        section: '1100px',
+        section: '1400px',
       },
+      screens: {},
     },
   },
   plugins: [],
