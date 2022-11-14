@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../custom-button/CustomButton';
+import CustomButton from '../shared/CustomButton';
 
 import { HiPaperAirplane } from 'react-icons/hi';
 import { CiMail } from 'react-icons/ci';
@@ -34,7 +34,7 @@ const Subscribe: React.FC<SubscribeProps> = (props) => {
                 />
               </div>
               <CustomButton styling="gradient-two py-4 px-8 rounded-lg text-base text-white mr-8 find-btn">
-                Subscribe
+                sub
               </CustomButton>
             </div>
           </div>

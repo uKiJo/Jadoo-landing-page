@@ -8,6 +8,7 @@ import Book from '../components/book/Book';
 import Testimonials from '../components/testimonials/Testimonials';
 import Sponsors from '../components/sponsors/Sponsors';
 import Subscribe from '../components/subscribe/Subscribe';
+import Footer from '../components/footer/Footer';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <Testimonials />
         <Sponsors />
         <Subscribe />
+        <Footer />
       </main>
 
       <footer className={styles.footer}></footer>

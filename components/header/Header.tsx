@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import CustomButton from '../custom-button/CustomButton';
+import CustomButton from '../shared/CustomButton';
 import heroImage from '../../public/Group 590.svg';
 
 import { RiPlayCircleFill } from 'react-icons/ri';
