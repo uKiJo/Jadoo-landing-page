@@ -14,7 +14,7 @@ interface BookProps {}
 const Book: React.FC<BookProps> = (props) => {
   return (
     <section className="flex justify-center">
-      <div className="flex justify-between w-section">
+      <div className="flex justify-around w-section">
         <div className="w-[511px] mr-28">
           <Subtitle>Easy and Fast</Subtitle>
           <Title>Book your next trip in 3 easy steps</Title>

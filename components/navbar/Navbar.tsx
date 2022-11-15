@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="flex font-google">
         <ul className="flex items-center">
           {navbarItems.map((item) => (
-            <li className="px-8 cursor-pointer" key={item}>
+            <li className="px-6 lg:px-4 cursor-pointer" key={item}>
               {item}
             </li>
           ))}

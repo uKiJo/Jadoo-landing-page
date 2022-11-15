@@ -12,11 +12,11 @@ const Header: React.FC = () => {
         <h2 className="text-heading1 font-bold uppercase mb-6">
           Best Destinations around the world
         </h2>
-        <span className="font-volkhov text-6xl w-[545px] font-bold text-heading2 block mb-7">
+        <span className="font-volkhov text-xl xl:text-6xl lg:text-4xl xl:w-[545px] lg:w-96 font-bold text-heading2 block mb-7">
           Travel, <span className="enjoy">enjoy</span> and live a new and full
           life
         </span>
-        <p className="text-paragraph text-base font-normal block w-[477px] mb-8">
+        <p className="text-paragraph text-base font-normal block xl:w-[477px] lg:w-96 mb-8">
           Built Wicket longer admire do barton vanity itself do in it. Preferred
           to sportsmen it engrossed listening. Park gate sell they west hard for
           the.
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className="ml-12">
-        <Image src={heroImage} alt="hero-image" />
+        <Image width={500} src={heroImage} alt="hero-image" />
       </div>
     </header>
   );

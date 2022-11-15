@@ -34,7 +34,7 @@ const Subscribe: React.FC<SubscribeProps> = (props) => {
                 />
               </div>
               <CustomButton styling="gradient-two py-4 px-8 rounded-lg text-base text-white mr-8 find-btn">
-                sub
+                Subscribe
               </CustomButton>
             </div>
           </div>
