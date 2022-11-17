@@ -15,6 +15,7 @@ module.exports = {
         yellow: '#F1A501',
         stroke: '#F7F7F7',
         violet: '#DFD7F9',
+        transparent: 'transparent',
       },
       fontFamily: {
         google: 'Product Sans, sans-serif',
@@ -24,7 +25,9 @@ module.exports = {
       width: {
         section: '1400px',
       },
-      screens: {},
+      screens: {
+        xs: '300px',
+      },
     },
   },
   plugins: [],
