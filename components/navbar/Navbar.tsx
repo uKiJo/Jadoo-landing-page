@@ -43,6 +43,7 @@ const navbarItems = ['Destinations', 'Hotels', 'Flights', 'Bookings'];
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const smallScreen = useSmallScreen();
+
   console.log(smallScreen);
 
   return (
@@ -59,7 +60,7 @@ const Navbar = () => {
             variants={navbar}
             initial={smallScreen && 'open'}
             animate={smallScreen && 'closed'}
-            exit={'exit'}
+            exit={smallScreen ? 'exit' : ''}
           >
             <motion.button
               // variants={navItem}
@@ -67,20 +68,11 @@ const Navbar = () => {
             >
               <RiCloseFill onClick={() => setOpen(false)} size={30} />
             </motion.button>
-            {/* <AnimatePresence> */}
-            <motion.ul
-              className="flex xs:pb-4 lg:pb-0 xs:h-fit lg:h-fit xs:justify-center xs:grow xs:flex-col lg:flex-row items-center"
-              // variants={navbar}
-              // initial="open"
-              // animate="closed"
-            >
+            <motion.ul className="flex xs:pb-4 lg:pb-0 xs:h-fit lg:h-fit xs:justify-center xs:grow xs:flex-col lg:flex-row items-center">
               {navbarItems.map((item) => (
                 <>
                   <motion.li
                     variants={navItem}
-                    // initial="open"
-                    // animate="closed"
-                    // exit="open"
                     className=" xs:p-4 xl:px-6 lg:px-4 xs:mb-4 lg:mb-0 cursor-pointer"
                     key={item}
                   >
