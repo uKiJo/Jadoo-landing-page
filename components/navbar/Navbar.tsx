@@ -47,7 +47,7 @@ const Navbar = () => {
   console.log(smallScreen);
 
   return (
-    <nav className="relative mt-12 mb-6 xs:mx-0 sm:mx-auto xs:w-full md:w-4/5  flex items-center xs:justify-between font-semibold text-primary">
+    <nav className="relative mt-12 mb-6 xs:mx-0 sm:mx-auto xs:w-full md:w-4/5  flex items-center xs:justify-between font-semibold text-primary xs:px-4">
       <div className="w-20 basis-1/6">
         <Image src={Logo} alt="jadoo-logo" />
       </div>
@@ -103,7 +103,7 @@ const Navbar = () => {
         <option value="FR">FR</option>
       </select>
       <button onClick={() => setOpen(!open)} className="lg:hidden">
-        <HiBars3BottomRight size={30} />
+        <HiBars3BottomRight size={40} />
       </button>
     </nav>
   );
