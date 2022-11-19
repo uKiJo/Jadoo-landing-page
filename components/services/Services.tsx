@@ -12,7 +12,7 @@ const Services: React.FC<ServicesProps> = (props) => {
     <section className="text-center mb-24 bg">
       <Subtitle>Category</Subtitle>
       <Title>We Offer Best Services</Title>
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center">
         {data.map((category) => (
           <Category key={category.id} {...category} />
         ))}

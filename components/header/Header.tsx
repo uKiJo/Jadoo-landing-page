@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           <Image src={heroImage} alt="hero-image" />
         </div>
       </div>
-      <div className="flex">
+      <div className="flex ">
         <CustomButton styling="bg-yellow py-4 px-6 rounded-lg text-sm text-white mr-8 find-btn">
           Find out more
         </CustomButton>
