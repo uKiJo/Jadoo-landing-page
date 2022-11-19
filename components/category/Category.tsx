@@ -12,12 +12,10 @@ const Category: React.FC<CategoryProps> = (props) => {
   return (
     <div className="lg:w-64 lg:h-80 xs:w-56 xs:h-72 mr-8 flex flex-col items-center rounded-3xl box-shadow mb-12 transition cursor-pointer">
       <Image className="m-6 h-20" src={image} alt={title} />
-      <h1 className="font-google lg:text-xl md:text-lg text-primary mb-8">
-        {' '}
-        {title}{' '}
+      <h1 className="font-google font-bold lg:text-xl md:text-lg text-primary mb-8">
+        {title}
       </h1>
       <p className="font-poppins lg:text-base sm:text-sm text-paragraph lg:w-44 sm:w-36 xs:w-44">
-        {' '}
         {details}
       </p>
     </div>
