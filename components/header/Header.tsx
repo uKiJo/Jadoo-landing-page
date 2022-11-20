@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   return (
     <header className="flex flex-col justify-center md:w-4/5 xs:w-full mx-auto mb-24 xs:p-4">
       <div className="flex justify-between">
-        <div className="font-poppins flex flex-col justify-center xl:w-[477px] lg:w-96 md:w-80 sm:w-64 ">
+        <div className="font-poppins flex flex-col justify-start xl:w-[477px] lg:w-96 md:w-80 sm:w-64 ">
           <h2 className="text-heading1 font-bold uppercase lg:mb-6 sm:mb-4 xs:mb-6">
             Best Destinations around the world
           </h2>

@@ -11,15 +11,15 @@ interface BookStepProps {
 const BookStep: React.FC<BookStepProps> = (props) => {
   const { title, image } = props;
   return (
-    <div className="flex font-poppins mb-12 xl:w-[395px]">
-      <div className="mr-6 flex justify-center">
-        <Image src={image} alt={title} width={90} />
+    <div className="flex font-poppins xl:mb-12 sm:mb-8 xl:w-[415px] lg:w-72">
+      <div className=" flex items-start lg:w-40 sm:w-32 sm:mr-4">
+        <Image src={image} alt={title} />
       </div>
       <div className="flex flex-col text-paragraph">
-        <span className="lg:text-base xs:text-sm  font-bold mb-0.5">
+        <span className="lg:text-base xs:text-sm font-bold mb-0.5">
           {title}
         </span>
-        <span className="lg:text-base xs:text-sm leading-5 font-regular">
+        <span className="xl:text-base xs:text-sm leading-5 font-regular">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor
           tempus.
         </span>

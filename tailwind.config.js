@@ -28,6 +28,9 @@ module.exports = {
       screens: {
         xs: '300px',
       },
+      gridAutoRows: {
+        '2fr': 'minmax(0, 2fr)',
+      },
     },
   },
   plugins: [],
