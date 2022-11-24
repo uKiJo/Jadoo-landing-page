@@ -27,9 +27,9 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="mb-48 lg:w-4/5 mx-auto">
-      <div className="grid grid-cols-3 grid-cols-9 gap-4">
-        <div className="col-span-2">
+    <section className="mb-48 lg:w-11/12 xl:w-4/5 mx-auto">
+      <div className="grid lg:grid-cols-9 md:grid-cols-1 md:grid-rows-1 gap-4">
+        <div className="lg:col-span-3 md:col-span-2">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
           <div className="flex">
@@ -44,7 +44,7 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="relative  mb-4 col-span-6">
+        <div className="relative mb-4 lg:col-span-5">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               layout
@@ -59,10 +59,10 @@ const Testimonials: React.FC = () => {
                 y: 0,
               }}
               exit={{ opacity: 0, y: -100 }}
-              className="absolute z-10 h-48 w-full"
+              className="absolute z-10 w-full"
               key={ind}
             >
-              <div className="relative">
+              <div className="relative lg:w-4/5">
                 <Image
                   className="absolute z-10"
                   src={reviews[ind].avatar}
@@ -82,10 +82,10 @@ const Testimonials: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-28 left-10 h-48 w-full"
+              className="absolute 2xl:top-28 lg:top-24 left-10 h-48 w-full"
               key={nxt}
             >
-              <div className="relative 2xl:w-[400px]">
+              <div className="relative lg:w-4/5">
                 <Image
                   // className="border border-stroke"
                   src={reviews[nxt].avatar}
@@ -102,7 +102,7 @@ const Testimonials: React.FC = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className=" flex flex-col justify-end">
+        <div className=" flex flex-col justify-end relative z-10">
           <button onClick={() => paginate(1)}>
             <BsChevronUp className="mb-14 p-1 h-8 w-8  fill-paragraph" />
           </button>
