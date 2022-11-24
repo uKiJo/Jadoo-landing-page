@@ -23,12 +23,12 @@ const Testimonials: React.FC = () => {
   console.log('direction', direction);
 
   const paginate = (newDirection: number) => {
-    setActive([active + newDirection, next + newDirection, +newDirection]);
+    setActive([active + newDirection, next + newDirection, newDirection]);
   };
 
   return (
     <section className="mb-48 lg:w-11/12 xl:w-4/5 mx-auto">
-      <div className="grid lg:grid-cols-9 md:grid-cols-1 md:grid-rows-1 gap-4">
+      <div className="grid lg:grid-cols-9 md:grid-cols-1 md:grid-rows-2 gap-4 md:auto-rows-min">
         <div className="lg:col-span-3 md:col-span-2">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
@@ -47,64 +47,58 @@ const Testimonials: React.FC = () => {
         <div className="relative mb-4 lg:col-span-5">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
-              layout
+              // layout
               custom={direction}
-              transition={{ duration: 0.5 }}
-              initial={{
-                opacity: 0,
-                y: -100,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{ opacity: 0, y: -100 }}
               className="absolute z-10 w-full"
+              variants={variants}
+              transition={{ duration: 0.3 }}
+              initial="enter"
+              animate="center"
+              exit="exit"
               key={ind}
             >
-              <div className="relative lg:w-4/5">
-                <Image
-                  className="absolute z-10"
-                  src={reviews[ind].avatar}
-                  alt={ind.toString()}
-                />
-                <Image
-                  className="card-shadow rounded-lg absolute top-10 left-10"
-                  src={reviews[ind].message}
-                  alt={ind.toString()}
-                />
-              </div>
+              {/* <div className="relative lg:w-4/5"> */}
+              <Image
+                className="absolute z-10"
+                src={reviews[ind].avatar}
+                alt={ind.toString()}
+              />
+              <Image
+                className="card-shadow rounded-lg absolute top-10 left-10"
+                src={reviews[ind].message}
+                alt={ind.toString()}
+              />
+              {/* </div> */}
             </motion.div>
-            <motion.div
-              layout
-              custom={direction}
-              transition={{ duration: 0.5 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute 2xl:top-28 lg:top-24 left-10 h-48 w-full"
+            {/* <motion.div
+              // layout
+              // transition={{ duration: 0.3 }}
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // exit={{ opacity: 0 }}
+              className="absolute 2xl:top-28 md:top-24 left-10 h-48 w-full"
               key={nxt}
             >
-              <div className="relative lg:w-4/5">
-                <Image
-                  // className="border border-stroke"
-                  src={reviews[nxt].avatar}
-                  alt={active.toString()}
-                  className=""
-                />
-                <Image
-                  // className="border border-stroke"
-                  src={reviews[nxt].message}
-                  alt={active.toString()}
-                  className="border border-stroke rounded-lg absolute top-10 left-10"
-                />
-              </div>
-            </motion.div>
+              {/* <div className="relative lg:w-4/5"> */}
+            {/* <Image
+              // className="border border-stroke"
+              src={reviews[nxt].avatar}
+              alt={active.toString()}
+              className=""
+            />
+            <Image
+              // className="border border-stroke"
+              src={reviews[nxt].message}
+              alt={active.toString()}
+              className="border border-stroke rounded-lg absolute top-10 left-10"
+            /> */}
+            {/* </div> */}
+            {/* </motion.div>  */}
           </AnimatePresence>
         </div>
         <div className=" flex flex-col justify-end relative z-10">
           <button onClick={() => paginate(1)}>
-            <BsChevronUp className="mb-14 p-1 h-8 w-8  fill-paragraph" />
+            <BsChevronUp className="mb-14 p-1 h-8 w-8 fill-paragraph" />
           </button>
           <button onClick={() => paginate(-1)}>
             <BsChevronDown className="p-1 h-8 w-8" />
@@ -119,7 +113,7 @@ let variants = {
   enter: (direction: number) => {
     return { y: direction * 100, opacity: 0 };
   },
-  center: { y: 0, x: 0, opacity: 1 },
+  center: { y: 0, opacity: 1 },
   exit: (direction: number) => {
     return { y: direction * -100, opacity: 0 };
   },
