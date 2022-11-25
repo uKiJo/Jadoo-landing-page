@@ -28,11 +28,11 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="flex justify-center mb-48 md:w-4/5 lg:w-11/12 xl:w-4/5 mx-auto">
-      <div className="grid lg:grid-cols-10 lg:grid-rows-[290px] sm:grid-cols-[600px_50px] sm:grid-rows-[168px_300px] gap-4">
-        <div className="lg:col-span-3 sm:col-span-2 justify-self-center">
+      <div className="grid lg:grid-cols-10 lg:grid-rows-[290px] xs:grid-cols-[minmax(400px,500px)_50px] xs:grid-rows-[168px_minmax(160px,200px)] gap-4">
+        <div className="lg:col-span-3 xs:col-span-2 justify-self-center">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
-          <div className="flex">
+          <div className="flex justify-center">
             {reviews.map((_, i) => (
               <motion.div key={i}>
                 <GoPrimitiveDot
@@ -44,11 +44,11 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="relative mb-4 lg:col-span-6 xs:col-span-1">
+        <div className="relative mb-4 lg:col-span-6 ">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               custom={direction}
-              className="absolute z-10 xs:w-4/5"
+              className="absolute left-10 z-10 xs:w-4/5"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -56,7 +56,6 @@ const Testimonials: React.FC = () => {
               exit="exit"
               key={ind}
             >
-              {/* <div className="relative lg:w-4/5"> */}
               <Image
                 className="absolute z-10"
                 src={reviews[ind].avatar}
@@ -67,7 +66,6 @@ const Testimonials: React.FC = () => {
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />
-              {/* </div> */}
             </motion.div>
           </AnimatePresence>
         </div>
