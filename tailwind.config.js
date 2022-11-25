@@ -22,15 +22,10 @@ module.exports = {
         poppins: 'Poppins',
         volkhov: 'Volkhov',
       },
-      width: {
-        section: '1400px',
-      },
       screens: {
         xs: '300px',
       },
-      gridAutoRows: {
-        '2fr': 'minmax(0, 2fr)',
-      },
+      gridTemplateColumns: {},
     },
   },
   plugins: [],

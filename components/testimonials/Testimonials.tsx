@@ -27,13 +27,13 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="mb-48 lg:w-11/12 xl:w-4/5 mx-auto">
-      <div className="grid lg:grid-cols-9 md:grid-cols-1 md:grid-rows-2 gap-4 md:auto-rows-min">
-        <div className="lg:col-span-3 md:col-span-2">
+    <section className="flex justify-center mb-48 md:w-4/5 lg:w-11/12 xl:w-4/5 mx-auto">
+      <div className="grid lg:grid-cols-10 lg:grid-rows-[290px] sm:grid-cols-[600px_50px] sm:grid-rows-[168px_300px] gap-4">
+        <div className="lg:col-span-3 sm:col-span-2 justify-self-center">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
           <div className="flex">
-            {reviews.map((img, i) => (
+            {reviews.map((_, i) => (
               <motion.div key={i}>
                 <GoPrimitiveDot
                   className={`mr-6 h-6 w-6 ${
@@ -44,12 +44,11 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="relative mb-4 lg:col-span-5">
+        <div className="relative mb-4 lg:col-span-6 xs:col-span-1">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
-              // layout
               custom={direction}
-              className="absolute z-10 w-full"
+              className="absolute z-10 xs:w-4/5"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -64,41 +63,17 @@ const Testimonials: React.FC = () => {
                 alt={ind.toString()}
               />
               <Image
-                className="card-shadow rounded-lg absolute top-10 left-10"
+                className="card-shadow rounded-lg absolute top-10 left-10 "
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />
               {/* </div> */}
             </motion.div>
-            {/* <motion.div
-              // layout
-              // transition={{ duration: 0.3 }}
-              // initial={{ opacity: 0 }}
-              // animate={{ opacity: 1 }}
-              // exit={{ opacity: 0 }}
-              className="absolute 2xl:top-28 md:top-24 left-10 h-48 w-full"
-              key={nxt}
-            >
-              {/* <div className="relative lg:w-4/5"> */}
-            {/* <Image
-              // className="border border-stroke"
-              src={reviews[nxt].avatar}
-              alt={active.toString()}
-              className=""
-            />
-            <Image
-              // className="border border-stroke"
-              src={reviews[nxt].message}
-              alt={active.toString()}
-              className="border border-stroke rounded-lg absolute top-10 left-10"
-            /> */}
-            {/* </div> */}
-            {/* </motion.div>  */}
           </AnimatePresence>
         </div>
-        <div className=" flex flex-col justify-end relative z-10">
-          <button onClick={() => paginate(1)}>
-            <BsChevronUp className="mb-14 p-1 h-8 w-8 fill-paragraph" />
+        <div className=" flex flex-col justify-end relative z-10 self-center justify-self-center w-fit">
+          <button className="mb-14" onClick={() => paginate(1)}>
+            <BsChevronUp className="p-1 h-8 w-8 fill-paragraph" />
           </button>
           <button onClick={() => paginate(-1)}>
             <BsChevronDown className="p-1 h-8 w-8" />
