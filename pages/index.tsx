@@ -28,7 +28,7 @@ export default function Home() {
         <Testimonials />
         <Sponsors />
         <Subscribe />
-        <Footer />
+        {/* <Footer /> */}
       </main>
 
       <footer className={styles.footer}></footer>

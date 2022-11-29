@@ -10,21 +10,23 @@
   background-image: url('./assets/decore2.svg');
   background-repeat: no-repeat;
   background-position: right;
-  width: 152px;
-  height: 166px;
+  width: 25%;
+  height: 50%;
 }
+
+
+
+@media only screen and (min-width: 600px) {
+  .background-right {
+    width: 100px;
+    height: 110px;
+  }
+}
+
 
 .background-circles {
   background-image: url('./assets//decore.svg');
   background-repeat: no-repeat;
   background-position: bottom left 20px;
-
+  background-size: 25% 50%;
 }
-
-// .background-upper {
-//   background-image: url('./assets//decore.svg');
-//   background-repeat: no-repeat;
-//   background-position: top right 20px;
-//   opacity: 0.2;
-
-// }
