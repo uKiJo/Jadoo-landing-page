@@ -25,8 +25,8 @@ module.exports = {
       screens: {
         xs: '300px',
       },
-      gridTemplateColumns: {
-        'fill-40': 'repeat(auto-fill, 150px)',
+      gridTemplateRows: {
+        testimonial: 'repeat(2, minmax(160px,200px))',
       },
     },
   },
