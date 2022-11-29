@@ -25,7 +25,9 @@ module.exports = {
       screens: {
         xs: '300px',
       },
-      gridTemplateColumns: {},
+      gridTemplateColumns: {
+        'fill-40': 'repeat(auto-fill, 150px)',
+      },
     },
   },
   plugins: [],

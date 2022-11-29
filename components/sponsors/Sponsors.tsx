@@ -7,14 +7,14 @@ interface SponsorsProps {}
 
 const Sponsors: React.FC<SponsorsProps> = (props) => {
   return (
-    <section className="flex justify-center mb-24">
-      <div className="flex justify-between w-section h-[86px] items-center mb-24">
+    <section className="flex justify-center mb-24 md:w-11/12 xl:w-4/5 mx-auto">
+      <div className="grid md:grid-cols-5 xs:grid-cols-2 justify-center h-96 md:w-full xs:w-4/5 mb-24">
         {logos.map((logo, i) => (
           <div
-            className=" flex h-full  px-8 py-4 rounded-lg box-shadow grayscale hover:grayscale-0"
+            className=" flex lg:h-[86px] xs:h-16 xs:w-28 sm:w-40 lg:w-48 lg:px-8 lg:py-4 sm:px-6 sm:py-2 justify-self-center self-center rounded-lg box-shadow grayscale hover:grayscale-0"
             key={i}
           >
-            <a className=" w-40 object-contain self-center" href="#">
+            <a className=" w-40 self-center" href="#">
               <Image src={logo} alt={i.toString()} />
             </a>
           </div>
