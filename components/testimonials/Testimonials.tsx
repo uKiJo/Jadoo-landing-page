@@ -57,7 +57,7 @@ const Testimonials: React.FC = () => {
               key={ind}
             >
               <Image
-                className="absolute z-10 xs:w-12"
+                className="absolute z-10 xs:w-12 md:w-16"
                 src={reviews[ind].avatar}
                 alt={ind.toString()}
               />
