@@ -27,9 +27,9 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="flex justify-center md:mb-48 xs:mb-24 md:w-4/5 lg:w-11/12 xl:w-4/5 mx-auto">
-      <div className="grid lg:grid-cols-10 lg:grid-rows-[290px] xs:grid-cols-[minmax(200px,500px)_50px] xs:grid-rows-testimonial gap-4">
-        <div className="lg:col-span-3 xs:col-span-2 justify-self-center">
+    <section className="xs:w-4/5  mx-auto md:mb-48 xs:mb-24 ">
+      <div className="grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial lg:grid-rows-1 gap-4 ">
+        <div className="lg:col-span-3 xs:col-span-2 justify-self-center xs:mb-12 lg:mb-0">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
           <div className="flex justify-center">
@@ -44,11 +44,11 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="relative mb-4 lg:col-span-6">
+        <div className="relative mb-4 lg:col-span-5 xs:col-span-2">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               custom={direction}
-              className="absolute top-10 z-10 xs:w-4/5"
+              className="absolute z-10 xs:top-10  sm:left-10 xs:w-4/5 sm:w-3/4"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -57,25 +57,25 @@ const Testimonials: React.FC = () => {
               key={ind}
             >
               <Image
-                className="absolute z-10 xs:w-12 md:w-16"
+                className="absolute xs:-top-5 xs:-left-5 sm:-top-5 sm:-left-5 z-10 xs:w-10 md:w-16"
                 src={reviews[ind].avatar}
                 alt={ind.toString()}
               />
               <Image
-                className="card-shadow rounded-lg absolute top-10 left-10 xs:w-full"
+                className="card-shadow rounded-lg xs:w-full"
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />
             </motion.div>
           </AnimatePresence>
-        </div>
-        <div className=" flex flex-col justify-end relative z-10 self-center justify-self-center w-fit">
-          <button className="mb-14" onClick={() => paginate(1)}>
-            <BsChevronUp className="p-1 h-8 w-8 fill-paragraph" />
-          </button>
-          <button onClick={() => paginate(-1)}>
-            <BsChevronDown className="p-1 h-8 w-8" />
-          </button>
+          <div className="absolute right-0 xs:top-10 flex flex-col justify-end z-10 sm:self-center xs:self-start justify-self-center w-fit">
+            <button className="mb-10" onClick={() => paginate(1)}>
+              <BsChevronUp className="p-1 sm:h-8 sm:w-8 xs:h-7 xs:w-7 fill-paragraph" />
+            </button>
+            <button onClick={() => paginate(-1)}>
+              <BsChevronDown className="p-1 sm:h-8 sm:w-8 xs:h-7 xs:w-7" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
