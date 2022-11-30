@@ -7,7 +7,7 @@ interface SponsorsProps {}
 
 const Sponsors: React.FC<SponsorsProps> = (props) => {
   return (
-    <section className="flex justify-center mb-24 md:w-11/12 xl:w-4/5 mx-auto">
+    <section className="flex justify-center md:mb-24 xs:mb-1 md:w-11/12 xl:w-4/5 mx-auto">
       <div className="grid md:grid-cols-5 xs:grid-cols-2 justify-center sm:h-96 md:h-fit xs:w-full mb-24">
         {logos.map((logo, i) => (
           <div

@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           <h2 className="text-heading1 font-bold uppercase lg:mb-6 sm:mb-4 xs:mb-6">
             Best Destinations around the world
           </h2>
-          <span className="font-volkhov xl:text-6xl lg:text-4xl sm:text-3xl xs:text-5xl font-bold text-heading2 block lg:mb-7 sm:mb-4 xs:mb-6">
+          <span className="font-volkhov xl:text-6xl lg:text-4xl sm:text-3xl xs:text-4xl font-bold text-heading2 block lg:mb-7 sm:mb-4 xs:mb-6">
             Travel, <span className="enjoy ">enjoy</span> and live a new and
             full life
           </span>
@@ -22,18 +22,21 @@ const Header: React.FC = () => {
             Preferred to sportsmen it engrossed listening. Park gate sell they
             west hard for the.
           </p>
+          <div className="flex ">
+            <CustomButton styling="bg-yellow lg:py-4 lg:px-6 xs:py-2 xs:px-4 rounded-lg text-sm text-white mr-8 find-btn">
+              Find out more
+            </CustomButton>
+            <div className="flex items-center cursor-pointer">
+              <RiPlayCircleFill
+                className="fill-heading1 mr-4 play-btn"
+                size={52}
+              />
+              <span className="text-paragraph font-medium">Play Demo</span>
+            </div>
+          </div>
         </div>
         <div className="xl:w-2/5 lg:ml-12 w-1/2 xs:hidden sm:block">
           <Image src={heroImage} alt="hero-image" />
-        </div>
-      </div>
-      <div className="flex ">
-        <CustomButton styling="bg-yellow py-4 px-6 rounded-lg text-sm text-white mr-8 find-btn">
-          Find out more
-        </CustomButton>
-        <div className="flex items-center cursor-pointer">
-          <RiPlayCircleFill className="fill-heading1 mr-4 play-btn" size={52} />
-          <span className="text-paragraph font-medium">Play Demo</span>
         </div>
       </div>
     </header>

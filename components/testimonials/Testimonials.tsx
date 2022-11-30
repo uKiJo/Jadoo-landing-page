@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="flex justify-center mb-48 md:w-4/5 lg:w-11/12 xl:w-4/5 mx-auto">
+    <section className="flex justify-center md:mb-48 xs:mb-24 md:w-4/5 lg:w-11/12 xl:w-4/5 mx-auto">
       <div className="grid lg:grid-cols-10 lg:grid-rows-[290px] xs:grid-cols-[minmax(200px,500px)_50px] xs:grid-rows-testimonial gap-4">
         <div className="lg:col-span-3 xs:col-span-2 justify-self-center">
           <Subtitle>Testimonials</Subtitle>
@@ -48,7 +48,7 @@ const Testimonials: React.FC = () => {
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               custom={direction}
-              className="absolute top-10 z-10 xs:w-3/4"
+              className="absolute top-10 z-10 xs:w-4/5"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -62,7 +62,7 @@ const Testimonials: React.FC = () => {
                 alt={ind.toString()}
               />
               <Image
-                className="card-shadow rounded-lg absolute top-10 left-10 "
+                className="card-shadow rounded-lg absolute top-10 left-10 xs:w-full"
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />

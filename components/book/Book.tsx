@@ -25,12 +25,12 @@ const Book: React.FC<BookProps> = (props) => {
       </div>
       <div className="md:col-start-2 lg:row-end-3 lg:row-span-2 md:row-start-2 self-center justify-self-center relative md:w-2/3 xs:w-4/5">
         <Image
-          className="card-shadow rounded-3xl"
+          className="card-shadow rounded-3xl xs:w-4/5 md:w-full xl:w-4/5"
           src={image1}
           alt="book-image"
         />
         <Image
-          className="absolute top-1/2 left-1/2 card-shadow rounded-3xl xs:w-2/3 2xl:w-72"
+          className="absolute top-1/2 left-1/2 card-shadow rounded-3xl xs:w-1/2 md:w-2/3 xl:w-3/5"
           src={image2}
           alt="book-image"
         />

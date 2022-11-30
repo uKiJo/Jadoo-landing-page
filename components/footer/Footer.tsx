@@ -13,13 +13,13 @@ const Footer: React.FC = () => {
   return (
     <footer className="flex justify-center mb-24">
       <div className="grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1 justify-between xs:w-11/12 xl:w-4/5 font-poppins">
-        <div className="xs:mb-8 justify-self-center">
+        <div className="xs:mb-8 ">
           <h1 className="text-5xl font-medium text-primary mb-8">Jadoo.</h1>
           <p className="text-sm font-medium text-paragraph w-52">
             Book your trip in minute, get full Control for much longer.
           </p>
         </div>
-        <div className="col-span-2 xs:grid xs:grid-cols-2 md:flex md:flex-row  xs:mx-auto md:mx-0 basis-1/2 justify-around xs:mb-8 md:mb-0 md:mt-8 lg:mt-0">
+        <div className="col-span-2 xs:grid xs:grid-cols-2 md:flex md:flex-row  md:mx-0  justify-between xs:mb-8 md:mb-0 md:mt-8 lg:mt-0">
           <div className="flex flex-col">
             <h1 className="md:text-xl xs:text-base font-bold mb-4">Company</h1>
             <span className="font-medium text-paragraph mb-2">Career</span>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="lg:justify-self-end md:justify-self-center md:col-start-2 md:row-start-1 lg:col-start-4 flex flex-col items-center">
+        <div className="lg:justify-self-end md:justify-self-center md:col-start-2 md:row-start-1 lg:col-start-4">
           <div className="flex mb-4">
             <div className="h-10 w-10 flex items-center justify-center rounded-full mr-6 icon-shadow">
               <FaFacebookF />

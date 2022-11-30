@@ -39,7 +39,7 @@ const Subscribe: React.FC<SubscribeProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="absolute md:bottom-10 md:-right-24 sm:right-0 sm:-bottom-24 background-right"></div>
+        <div className="absolute md:-bottom-6  sm:right-0 sm:-bottom-24 background-right"></div>
       </div>
     </section>
   );
