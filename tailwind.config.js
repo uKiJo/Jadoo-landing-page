@@ -27,7 +27,6 @@ module.exports = {
       },
       gridTemplateRows: {
         testimonial: 'repeat(2, minmax(160px,1fr))',
-        mdTestimonial: 'repeat(1, minmax(160px,1fr))',
       },
     },
   },

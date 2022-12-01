@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="xs:w-4/5  mx-auto md:mb-48 xs:mb-24 ">
+    <section className="xs:w-4/5  mx-auto md:mb-48 xs:mb-16 ">
       <div className="grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial lg:grid-rows-1 gap-4 ">
         <div className="lg:col-span-3 xs:col-span-2 justify-self-center xs:mb-12 lg:mb-0">
           <Subtitle>Testimonials</Subtitle>
