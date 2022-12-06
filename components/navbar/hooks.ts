@@ -8,8 +8,6 @@ export const useSmallScreen = () => {
 
   const [isPresent, safeToRemove] = usePresence();
 
-  console.log('i am present ?', isPresent);
-
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 1024px)');
     mediaQuery.addEventListener('change', () =>

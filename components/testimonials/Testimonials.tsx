@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import reviews from './review-data';
@@ -11,24 +11,53 @@ import Subtitle from '../shared/Subtitle';
 import Title from '../shared/Title';
 
 const Testimonials: React.FC = () => {
-  // const [[activeImage, direction], setActiveImage] = useState([0, 0]);
-  const [[active, next, direction], setActive] = React.useState([0, 1, 0]);
-  const [isDisabled, setIsDisabled] = React.useState([false, false]);
+  const ref = useRef<HTMLDivElement>(null);
+  const [containerHeight, setcontainerHeight] = useState(0);
+  const [viewport, setViewport] = useState(0);
+  const [[active, next, direction], setActive] = useState([0, 1, 0]);
+  const [isDisabled, setIsDisabled] = useState([false, false]);
 
   const ind = wrap(0, reviews.length, active);
   const nxt = wrap(0, reviews.length, next);
 
-  console.log('active', ind);
-  console.log('next', nxt);
-  console.log('direction', direction);
+  // console.log('active', ind);
+  // console.log('next', nxt);
+  // console.log('direction', direction);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    console.log(containerHeight);
+    console.log(viewport);
+
+    return () => {
+      console.log('dismount');
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, [containerHeight, viewport]);
 
   const paginate = (newDirection: number) => {
     setActive([active + newDirection, next + newDirection, newDirection]);
   };
 
+  const updateDimensions = () => {
+    console.log(ref.current?.clientHeight);
+    console.log(window.innerHeight);
+    setViewport(window.innerWidth);
+    if (ref.current) setcontainerHeight(ref.current.clientHeight);
+  };
+
   return (
     <section className="xs:w-4/5  mx-auto md:mb-48 xs:mb-16 ">
-      <div className="grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial lg:grid-rows-1 gap-4 ">
+      <div
+        style={{
+          gridTemplateRows: `${
+            viewport > 1024
+              ? containerHeight + 'px'
+              : `auto ${containerHeight}px`
+          }`,
+        }}
+        className={`grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial gap-4`}
+      >
         <div className="lg:col-span-3 xs:col-span-2 justify-self-center xs:mb-12 lg:mb-0">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
@@ -47,8 +76,9 @@ const Testimonials: React.FC = () => {
         <div className="relative mb-4 lg:col-span-5 xs:col-span-2">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
+              ref={ref}
               custom={direction}
-              className="absolute z-10 xs:top-10  sm:left-10 xs:w-4/5 sm:w-3/4"
+              className="absolute z-10 xs:top-10 sm:left-10 xs:w-4/5 sm:w-3/4"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -57,7 +87,7 @@ const Testimonials: React.FC = () => {
               key={ind}
             >
               <Image
-                className="absolute xs:-top-5 xs:-left-5 sm:-top-5 sm:-left-5 z-10 xs:w-10 md:w-16"
+                className={`absolute xs:-top-5 xs:-left-5 sm:-top-10 sm:-left-5 z-10 xs:w-10 md:w-16`}
                 src={reviews[ind].avatar}
                 alt={ind.toString()}
               />
