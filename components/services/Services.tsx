@@ -9,10 +9,10 @@ interface ServicesProps {}
 
 const Services: React.FC<ServicesProps> = (props) => {
   return (
-    <section className="text-center mb-24 bg">
+    <section className="md:w-4/5 mx-auto text-center mb-24 bg">
       <Subtitle>Category</Subtitle>
       <Title>We Offer Best Services</Title>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap sm:justify-between xs:justify-center">
         {data.map((category) => (
           <Category key={category.id} {...category} />
         ))}

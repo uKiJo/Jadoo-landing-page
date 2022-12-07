@@ -12,7 +12,9 @@ import Title from '../shared/Title';
 
 const Testimonials: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [containerHeight, setcontainerHeight] = useState(0);
+  const [containerHeight, setcontainerHeight] = useState(
+    ref.current?.clientHeight
+  );
   const [viewport, setViewport] = useState(0);
   const [[active, next, direction], setActive] = useState([0, 1, 0]);
   const [isDisabled, setIsDisabled] = useState([false, false]);
@@ -20,14 +22,10 @@ const Testimonials: React.FC = () => {
   const ind = wrap(0, reviews.length, active);
   const nxt = wrap(0, reviews.length, next);
 
-  // console.log('active', ind);
-  // console.log('next', nxt);
-  // console.log('direction', direction);
+  console.log(containerHeight);
 
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
-    console.log(containerHeight);
-    console.log(viewport);
 
     return () => {
       console.log('dismount');
@@ -40,14 +38,14 @@ const Testimonials: React.FC = () => {
   };
 
   const updateDimensions = () => {
-    console.log(ref.current?.clientHeight);
-    console.log(window.innerHeight);
     setViewport(window.innerWidth);
     if (ref.current) setcontainerHeight(ref.current.clientHeight);
+    console.log('update dimension fired!');
+    console.log(ref.current);
   };
 
   return (
-    <section className="xs:w-4/5  mx-auto md:mb-48 xs:mb-16 ">
+    <section className="xs:w-4/5 mx-auto md:mb-48 xs:mb-24 ">
       <div
         style={{
           gridTemplateRows: `${
@@ -99,11 +97,11 @@ const Testimonials: React.FC = () => {
             </motion.div>
           </AnimatePresence>
           <div className="absolute right-0 xs:top-10 flex flex-col justify-end z-10 sm:self-center xs:self-start justify-self-center w-fit">
-            <button className="mb-10" onClick={() => paginate(1)}>
-              <BsChevronUp className="p-1 sm:h-8 sm:w-8 xs:h-7 xs:w-7 fill-paragraph" />
+            <button className="xs:mb-6 sm:mb-10" onClick={() => paginate(1)}>
+              <BsChevronUp className="p-1 sm:h-8 sm:w-8 xs:h-6 xs:w-6 fill-paragraph" />
             </button>
             <button onClick={() => paginate(-1)}>
-              <BsChevronDown className="p-1 sm:h-8 sm:w-8 xs:h-7 xs:w-7" />
+              <BsChevronDown className="p-1 sm:h-8 sm:w-8 xs:h-6 xs:w-6" />
             </button>
           </div>
         </div>

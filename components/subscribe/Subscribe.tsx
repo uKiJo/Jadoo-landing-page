@@ -18,7 +18,7 @@ const Subscribe: React.FC<SubscribeProps> = (props) => {
           />
         </div>
 
-        <div className="lg:h-96 md:h-80 xs:h-64 xl:w-full bg-violet/[0.2] sm:rounded-tl-[129px] xs:rounded-tl-3xl rounded-bl-3xl rounded-r-3xl overflow-hidden background-circles background-upper z-10">
+        <div className="lg:h-96 md:h-80 xs:h-64 xl:w-full bg-violet/[0.2] sm:rounded-tl-[129px] xs:rounded-tl-3xl rounded-bl-3xl rounded-r-3xl overflow-hidden background-circles z-10">
           <div className="flex flex-col justify-center items-center h-full">
             <h1 className="font-poppins font-semibold lg:text-4xl md:text-3xl sm:text-xl xs:text-sm text-paragraph w-9/12 md:mb-20 xs:mb-8 text-center leading-[55px]">
               Subscribe to get information, latest news and other interesting

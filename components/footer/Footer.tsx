@@ -11,15 +11,15 @@ import CustomButton from '../shared/CustomButton';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex justify-center mb-24">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1 justify-between xs:w-11/12 xl:w-4/5 font-poppins">
+    <footer className="md:w-4/5 mx-auto flex justify-between mb-24">
+      <div className="sm:w-full grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1 justify-between xs:w-11/12 font-poppins">
         <div className="xs:mb-8 ">
           <h1 className="text-5xl font-medium text-primary mb-8">Jadoo.</h1>
           <p className="text-sm font-medium text-paragraph w-52">
             Book your trip in minute, get full Control for much longer.
           </p>
         </div>
-        <div className="col-span-2 xs:grid xs:grid-cols-2 md:flex md:flex-row  md:mx-0  justify-between xs:mb-8 md:mb-0 md:mt-8 lg:mt-0">
+        <div className="col-span-2 xs:grid xs:grid-cols-2 md:flex md:flex-row  md:mx-0 lg:justify-evenly xs:justify-between xs:mb-8 md:mb-0 md:mt-8 lg:mt-0">
           <div className="flex flex-col">
             <h1 className="md:text-xl xs:text-base font-bold mb-4">Company</h1>
             <span className="font-medium text-paragraph mb-2">Career</span>

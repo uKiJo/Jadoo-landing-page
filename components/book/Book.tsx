@@ -13,7 +13,7 @@ interface BookProps {}
 
 const Book: React.FC<BookProps> = (props) => {
   return (
-    <section className="md:grid md:grid-cols-2 md:grid-rows-[h-fit] xs:flex xs:flex-col xs:justify-center mb-24 lg:w-4/5 md:w-full mx-auto xs:p-4">
+    <section className="md:grid md:grid-cols-2 md:grid-rows-[h-fit] xs:flex xs:flex-col xs:justify-center mb-24 md:w-4/5 md:w-full mx-auto xs:p-4">
       <div className="xl:w-[511px] lg:w-[450px] md:w-full md:col-start-1 md:col-span-2 lg:col-start-1 lg:col-end-2">
         <Subtitle>Easy and Fast</Subtitle>
         <Title>Book your next trip in 3 easy steps</Title>

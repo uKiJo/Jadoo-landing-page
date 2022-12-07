@@ -9,12 +9,12 @@ const Header: React.FC = () => {
   return (
     <header className="flex flex-col justify-center md:w-4/5 xs:w-full mx-auto mb-24 xs:p-4">
       <div className="flex justify-between">
-        <div className="font-poppins flex flex-col justify-around xl:w-[477px] lg:w-96 md:w-80 sm:w-64 ">
+        <div className="font-poppins flex flex-col justify-start xl:w-[545px] lg:w-[420px] md:w-80 sm:w-64 ">
           <div>
             <h2 className="text-heading1 font-bold uppercase lg:mb-6 sm:mb-4 xs:mb-6">
               Best Destinations around the world
             </h2>
-            <span className="font-volkhov xl:text-6xl lg:text-4xl sm:text-3xl xs:text-4xl font-bold text-heading2 block lg:mb-7 sm:mb-4 xs:mb-6">
+            <span className="font-volkhov xl:text-7xl xl:leading-[5rem] xl:tracking-[-.040em] lg:text-5xl sm:text-3xl xs:text-4xl font-bold text-heading2 block lg:mb-7 sm:mb-4 xs:mb-6">
               Travel, <span className="enjoy ">enjoy</span> and live a new and
               full life
             </span>
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="xl:w-2/5 lg:ml-12 w-1/2 xs:hidden sm:block">
+        <div className="xl:w-1/2 lg:w-4/5 lg:ml-12 w-1/2 xs:hidden sm:block">
           <Image src={heroImage} alt="hero-image" />
         </div>
       </div>

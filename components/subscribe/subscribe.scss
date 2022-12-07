@@ -15,6 +15,12 @@
 }
 
 
+.background-circles {
+  background-image: url('./assets//decore.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left 20px;
+  background-size: 25% 50%;
+}
 
 @media only screen and (min-width: 600px) {
   .background-right {
@@ -23,10 +29,8 @@
   }
 }
 
-
-.background-circles {
-  background-image: url('./assets//decore.svg');
-  background-repeat: no-repeat;
-  background-position: bottom left 20px;
-  background-size: 25% 50%;
+@media only screen and (max-width: 600px) {
+  .background-circles {
+    background-size: 50% 50%;
+  }
 }

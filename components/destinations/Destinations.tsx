@@ -9,10 +9,10 @@ interface DestinationsProps {}
 
 const Destinations: React.FC<DestinationsProps> = (props) => {
   return (
-    <section className="flex flex-col items-center lg:mb-48 xs:mb-24">
+    <section className="md:w-4/5 mx-auto flex flex-col items-center lg:mb-48 xs:mb-24">
       <Subtitle>Top Selling</Subtitle>
       <Title>Top Destinations</Title>
-      <div className="md:flex md:flex-wrap justify-center sm:grid sm:grid-cols-2  bg2">
+      <div className="lg:flex lg:flex-row lg:justify-between sm:grid sm:grid-cols-2 xs:flex xs:flex-col xs:items-center w-full bg2">
         {data.map((dest) => (
           <Card key={dest.id} {...dest} />
         ))}

@@ -1,12 +1,12 @@
 .enjoy {
   background-image: url('../../public//Decore-text.svg');
   background-repeat: no-repeat;
-  background-position-y: 85%;
+  background-position-y: 80%;
   // background-position-x: -20px;
-  background-size: 100%;
-  width: 40%;
-  display: inline-flex;
-  justify-content: center;
+  background-size: 130%;
+  // width: 40%;
+  // display: inline-flex;
+  // justify-content: center;
 }
 
 
@@ -14,6 +14,13 @@
   .enjoy {
     // background-size: 80%;
     width: 30%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .enjoy {
+    // background-size: 80%;
+    width: 18%;
   }
 }
 
