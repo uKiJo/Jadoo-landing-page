@@ -9,7 +9,7 @@ interface ServicesProps {}
 
 const Services: React.FC<ServicesProps> = (props) => {
   return (
-    <section className="md:w-4/5 mx-auto text-center mb-24 bg">
+    <section className="md:w-3/4 mx-auto text-center mb-24 bg">
       <Subtitle>Category</Subtitle>
       <Title>We Offer Best Services</Title>
       <div className="flex flex-wrap sm:justify-between xs:justify-center">

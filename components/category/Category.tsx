@@ -10,7 +10,7 @@ interface CategoryProps {
 const Category: React.FC<CategoryProps> = (props) => {
   const { image, title, details } = props;
   return (
-    <div className="lg:w-64 lg:h-80 xs:w-56 xs:h-72 mr-8 flex flex-col items-center rounded-3xl box-shadow mb-12 transition cursor-pointer">
+    <div className="lg:w-64 lg:h-80 xs:w-56 xs:h-72 flex flex-col items-center rounded-3xl box-shadow md:mb-12 xs:mb-6 transition cursor-pointer">
       <Image className="m-6 h-20" src={image} alt={title} />
       <h1 className="font-google font-bold lg:text-xl md:text-lg text-primary mb-8">
         {title}

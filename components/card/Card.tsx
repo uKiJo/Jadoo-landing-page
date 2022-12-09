@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = (props) => {
         <Image className="w-full object-cover" src={image} alt={place} />
       </div>
       <div className="flex flex-col font-medium justify-center grow p-6">
-        <div className="mb-4 flex justify-between lg:text-lg sm:text-base">
+        <div className="mb-4 flex justify-between lg:text-base sm:text-base">
           <span>{place}</span>
           <span>${price}k</span>
         </div>

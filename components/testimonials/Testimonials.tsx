@@ -9,54 +9,54 @@ import { GoPrimitiveDot } from 'react-icons/go';
 
 import Subtitle from '../shared/Subtitle';
 import Title from '../shared/Title';
+import { useViewport } from './hooks';
 
 const Testimonials: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [containerHeight, setcontainerHeight] = useState(
-    ref.current?.clientHeight
-  );
-  const [viewport, setViewport] = useState(0);
+  const [height, viewport] = useViewport(ref);
+  // const [containerHeight, setcontainerHeight] = useState(
+  //   ref.current?.clientHeight
+  // );
+  // const [viewport, setViewport] = useState(0);
   const [[active, next, direction], setActive] = useState([0, 1, 0]);
   const [isDisabled, setIsDisabled] = useState([false, false]);
 
   const ind = wrap(0, reviews.length, active);
   const nxt = wrap(0, reviews.length, next);
 
-  console.log(containerHeight);
+  console.log(height, viewport);
 
-  useEffect(() => {
-    window.addEventListener('resize', updateDimensions);
+  // useEffect(() => {
+  //   window.addEventListener('resize', updateDimensions);
 
-    return () => {
-      console.log('dismount');
-      window.removeEventListener('resize', updateDimensions);
-    };
-  }, [containerHeight, viewport]);
+  //   return () => {
+  //     console.log('dismount');
+  //     window.removeEventListener('resize', updateDimensions);
+  //   };
+  // }, [containerHeight, viewport]);
 
   const paginate = (newDirection: number) => {
     setActive([active + newDirection, next + newDirection, newDirection]);
   };
 
-  const updateDimensions = () => {
-    setViewport(window.innerWidth);
-    if (ref.current) setcontainerHeight(ref.current.clientHeight);
-    console.log('update dimension fired!');
-    console.log(ref.current);
-  };
+  // const updateDimensions = () => {
+  //   setViewport(window.innerWidth);
+  //   if (ref.current) setcontainerHeight(ref.current.clientHeight);
+  //   console.log('update dimension fired!');
+  //   console.log(ref.current);
+  // };
 
   return (
-    <section className="xs:w-4/5 mx-auto md:mb-48 xs:mb-24 ">
+    <section className="xs:w-3/4 mx-auto xs:mb-32">
       <div
         style={{
           gridTemplateRows: `${
-            viewport > 1024
-              ? containerHeight + 'px'
-              : `auto ${containerHeight}px`
+            viewport! > 1024 ? height + 'px' : `auto ${height}px`
           }`,
         }}
         className={`grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial gap-4`}
       >
-        <div className="lg:col-span-3 xs:col-span-2 justify-self-center xs:mb-12 lg:mb-0">
+        <div className="lg:col-span-3 xs:col-span-2 justify-self-start xs:mb-12 lg:mb-0">
           <Subtitle>Testimonials</Subtitle>
           <Title>What People Say About Us</Title>
           <div className="flex justify-center">

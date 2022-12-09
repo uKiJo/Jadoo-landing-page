@@ -47,7 +47,7 @@ const Navbar = () => {
   console.log(smallScreen);
 
   return (
-    <nav className="relative mt-12 mb-6 xs:mx-0 sm:mx-auto xs:w-full md:w-4/5  flex items-center xs:justify-between font-semibold text-primary xs:px-4">
+    <nav className="relative mt-12 mb-6 xs:mx-0 sm:mx-auto xs:w-full md:w-3/4 flex items-center xs:justify-between font-semibold text-primary xs:px-4">
       <div className="w-20 basis-1/6">
         <Image src={Logo} alt="jadoo-logo" />
       </div>
