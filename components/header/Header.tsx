@@ -7,7 +7,7 @@ import { RiPlayCircleFill } from 'react-icons/ri';
 
 const Header: React.FC = () => {
   return (
-    <header className="flex flex-col justify-center md:w-3/4 xs:w-full mx-auto mb-24">
+    <header className="flex flex-col justify-center md:w-3/4 xs:w-full mx-auto mb-32">
       <div className="flex justify-between">
         <div className="font-poppins flex flex-col justify-start xl:w-[545px] lg:w-[420px] md:w-80 sm:w-64 ">
           <div>

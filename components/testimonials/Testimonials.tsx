@@ -47,14 +47,16 @@ const Testimonials: React.FC = () => {
   // };
 
   return (
-    <section className="xs:w-3/4 mx-auto xs:mb-32">
+    <section className="xs:w-3/4 mx-auto md:mb-32 xs:mb-12">
       <div
-        style={{
-          gridTemplateRows: `${
-            viewport! > 1024 ? height + 'px' : `auto ${height}px`
-          }`,
-        }}
-        className={`grid lg:grid-cols-8 xs:grid-cols-1 xs:grid-rows-testimonial gap-4`}
+        style={
+          {
+            // gridTemplateRows: `${
+            //   viewport! > 1024 ? height! + 'px' : `auto ${height}px`
+            // }`,
+          }
+        }
+        className={`grid lg:grid-cols-8 xs:grid-cols-1 md:grid-rows-1 xs:grid-rows-[200px_auto] gap-4`}
       >
         <div className="lg:col-span-3 xs:col-span-2 justify-self-start xs:mb-12 lg:mb-0">
           <Subtitle>Testimonials</Subtitle>
@@ -71,12 +73,13 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="relative mb-4 lg:col-span-5 xs:col-span-2">
-          <AnimatePresence initial={false} custom={direction}>
+        <div className="flex justify-between mb-4 lg:col-span-5 xs:col-span-2">
+          <AnimatePresence mode="popLayout" initial={false} custom={direction}>
             <motion.div
+              layout
               ref={ref}
               custom={direction}
-              className="absolute z-10 xs:top-10 sm:left-10 xs:w-4/5 sm:w-3/4"
+              className="relative xs:w-4/5 sm:w-3/4"
               variants={variants}
               transition={{ duration: 0.3 }}
               initial="enter"
@@ -85,18 +88,18 @@ const Testimonials: React.FC = () => {
               key={ind}
             >
               <Image
-                className={`absolute xs:-top-5 xs:-left-5 sm:-top-10 sm:-left-5 z-10 xs:w-10 md:w-16`}
+                className={`absolute md:-top-8 md:-left-8  z-10 xs:w-10 md:w-16`}
                 src={reviews[ind].avatar}
                 alt={ind.toString()}
               />
               <Image
-                className="card-shadow rounded-lg xs:w-full"
+                className="rounded-lg xs:w-full box-shadow"
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute right-0 xs:top-10 flex flex-col justify-end z-10 sm:self-center xs:self-start justify-self-center w-fit">
+          <div className="justify-end right-0 xs:top-10 flex flex-col justify-end z-10 sm:self-center xs:self-start justify-self-center w-fit">
             <button className="xs:mb-6 sm:mb-10" onClick={() => paginate(1)}>
               <BsChevronUp className="p-1 sm:h-8 sm:w-8 xs:h-6 xs:w-6 fill-paragraph" />
             </button>

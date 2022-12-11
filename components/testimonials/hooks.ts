@@ -5,9 +5,14 @@ export const useViewport = (ref: RefObject<HTMLDivElement>) => {
     ref.current?.clientHeight
   );
   const [viewport, setViewport] = useState(0);
+  const [refState, setRefState] = useState(ref);
 
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
+    setViewport(window.innerWidth);
+    setcontainerHeight(ref.current?.clientHeight);
+    console.log(ref.current);
+    setRefState(ref.current);
 
     return () => {
       console.log('dismount');
