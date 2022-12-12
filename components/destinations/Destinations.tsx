@@ -12,7 +12,7 @@ const Destinations: React.FC<DestinationsProps> = (props) => {
     <section className="md:w-3/4 mx-auto flex flex-col items-center mb-32">
       <Subtitle>Top Selling</Subtitle>
       <Title>Top Destinations</Title>
-      <div className="lg:flex lg:flex-row lg:justify-between sm:grid sm:grid-cols-2 xs:flex xs:flex-col xs:items-center w-full bg2">
+      <div className="lg:flex lg:flex-row lg:justify-between sm:gap-14 lg:gap-20 sm:grid sm:grid-cols-2 xs:flex xs:flex-col xs:items-center bg2">
         {data.map((dest) => (
           <Card key={dest.id} {...dest} />
         ))}

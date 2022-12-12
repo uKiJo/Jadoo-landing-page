@@ -13,7 +13,7 @@ interface BookProps {}
 
 const Book: React.FC<BookProps> = (props) => {
   return (
-    <section className="md:grid md:grid-cols-2 md:grid-rows-[h-fit] xs:flex xs:flex-col xs:justify-center mb-32 md:w-3/4 mx-auto ">
+    <section className="md:grid md:grid-cols-2 md:grid-rows-[h-fit] xs:flex xs:flex-col xs:justify-center mb-32 md:w-4/5 lg:w-3/4 mx-auto ">
       <div className="xl:w-[511px] lg:w-[450px] md:w-full md:col-start-1 md:col-span-2 lg:col-start-1 lg:col-end-2">
         <Subtitle>Easy and Fast</Subtitle>
         <Title>Book your next trip in 3 easy steps</Title>
@@ -23,14 +23,14 @@ const Book: React.FC<BookProps> = (props) => {
           <BookStep key={book.id} {...book} />
         ))}
       </div>
-      <div className="md:col-start-2 lg:row-end-3 lg:row-span-2 md:row-start-2 self-center justify-self-center relative md:w-2/3 xs:w-4/5">
+      <div className="md:col-start-2 lg:row-end-3 lg:row-span-2 md:row-start-2 lg:self-center md:self-start xs:self-center justify-self-center relative md:w-2/3 sm:w-3/5 xs:w-4/5">
         <Image
-          className="card-shadow rounded-3xl xs:w-4/5 md:w-full xl:w-4/5"
+          className="card-shadow rounded-3xl xs:w-4/5 sm:w-3/4 md:w-full xl:w-4/5"
           src={image1}
           alt="book-image"
         />
         <Image
-          className="absolute top-1/2 left-1/2 card-shadow rounded-3xl xs:w-3/5 md:w-2/3 xl:w-3/5"
+          className="absolute top-1/2 left-1/2 card-shadow rounded-3xl xs:w-3/5 sm:w-1/2 md:w-2/3 xl:w-3/5"
           src={image2}
           alt="book-image"
         />

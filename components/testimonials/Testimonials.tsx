@@ -26,36 +26,13 @@ const Testimonials: React.FC = () => {
 
   console.log(height, viewport);
 
-  // useEffect(() => {
-  //   window.addEventListener('resize', updateDimensions);
-
-  //   return () => {
-  //     console.log('dismount');
-  //     window.removeEventListener('resize', updateDimensions);
-  //   };
-  // }, [containerHeight, viewport]);
-
   const paginate = (newDirection: number) => {
     setActive([active + newDirection, next + newDirection, newDirection]);
   };
 
-  // const updateDimensions = () => {
-  //   setViewport(window.innerWidth);
-  //   if (ref.current) setcontainerHeight(ref.current.clientHeight);
-  //   console.log('update dimension fired!');
-  //   console.log(ref.current);
-  // };
-
   return (
-    <section className="xs:w-3/4 mx-auto md:mb-32 xs:mb-12">
+    <section className="md:w-4/5 lg:w-3/4 mx-auto md:mb-32 xs:mb-12">
       <div
-        style={
-          {
-            // gridTemplateRows: `${
-            //   viewport! > 1024 ? height! + 'px' : `auto ${height}px`
-            // }`,
-          }
-        }
         className={`grid lg:grid-cols-8 xs:grid-cols-1 md:grid-rows-1 xs:grid-rows-[200px_auto] gap-4`}
       >
         <div className="lg:col-span-3 xs:col-span-2 justify-self-start xs:mb-12 lg:mb-0">
@@ -73,7 +50,7 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-between mb-4 lg:col-span-5 xs:col-span-2">
+        <div className="flex justify-around mb-4 lg:col-span-5 xs:col-span-2">
           <AnimatePresence mode="popLayout" initial={false} custom={direction}>
             <motion.div
               layout
@@ -88,12 +65,12 @@ const Testimonials: React.FC = () => {
               key={ind}
             >
               <Image
-                className={`absolute md:-top-8 md:-left-8  z-10 xs:w-10 md:w-16`}
+                className={`absolute md:-top-8 md:-left-8 xs:-top-5 xs:-left-5 z-10 xs:w-10 md:w-16`}
                 src={reviews[ind].avatar}
                 alt={ind.toString()}
               />
               <Image
-                className="rounded-lg xs:w-full box-shadow"
+                className="rounded-lg xs:w-full img-shadow"
                 src={reviews[ind].message}
                 alt={ind.toString()}
               />

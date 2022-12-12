@@ -22,23 +22,37 @@ const Footer: React.FC = () => {
         <div className="col-span-2 xs:grid xs:grid-cols-2 md:flex md:flex-row  md:mx-0 lg:justify-evenly xs:justify-between xs:mb-8 md:mb-0 md:mt-8 lg:mt-0">
           <div className="flex flex-col">
             <h1 className="md:text-xl xs:text-base font-bold mb-4">Company</h1>
-            <span className="font-medium text-paragraph mb-2">Career</span>
-            <span className="font-medium text-paragraph mb-2">About</span>
-            <span className="font-medium text-paragraph mb-2">Mobile</span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Career
+            </span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              About
+            </span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Mobile
+            </span>
           </div>
           <div className="flex flex-col">
             <h1 className="md:text-xl xs:text-base font-bold mb-4">Contact</h1>
-            <span className="font-medium text-paragraph mb-2">Help/FAQ</span>
-            <span className="font-medium text-paragraph mb-2">Press</span>
-            <span className="font-medium text-paragraph mb-2">Affiliates</span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Help/FAQ
+            </span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Press
+            </span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Affiliates
+            </span>
           </div>
           <div className="flex flex-col">
             <h1 className="md:text-xl xs:text-base font-bold mb-4">More</h1>
-            <span className="font-medium text-paragraph mb-2">
+            <span className="font-medium text-paragraph mb-2 text-sm">
               Airlinesfess
             </span>
-            <span className="font-medium text-paragraph mb-2">Airline</span>
-            <span className="font-medium text-paragraph mb-2">
+            <span className="font-medium text-paragraph mb-2 text-sm">
+              Airline
+            </span>
+            <span className="font-medium text-paragraph mb-2 text-sm">
               Lower fare tips
             </span>
           </div>

@@ -55,7 +55,7 @@ const Navbar = () => {
         {(!smallScreen || open) && (
           <motion.div
             className={
-              'flex basis-1/2 overflow-hidden grow xl:relative xs:max-lg:absolute xl:top-0 xs:right-0 xs:top-0 sm:w-1/2 lg:p-4 xs:rounded-lg lg:shadow-none xs:shadow xs:bg-white lg:bg-transparent xs:w-full lg:flex-row xs:flex-col font-google'
+              'flex basis-1/2 overflow-hidden grow xl:relative xs:max-lg:absolute xl:top-0 xs:right-0 xs:top-0 sm:w-1/2 lg:p-4 xs:rounded-lg xs:bg-white lg:bg-transparent xs:w-full lg:flex-row xs:flex-col font-google xs:shadow-card lg:shadow-none'
             }
             variants={navbar}
             initial={smallScreen && 'open'}
