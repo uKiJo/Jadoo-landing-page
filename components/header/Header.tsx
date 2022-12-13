@@ -4,6 +4,7 @@ import CustomButton from '../shared/CustomButton';
 import heroImage from '../../public/Group 590.svg';
 
 import { RiPlayCircleFill } from 'react-icons/ri';
+import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
   return (
@@ -37,9 +38,14 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="xl:w-1/2 lg:w-4/5 lg:ml-12 w-1/2 xs:hidden sm:block">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="xl:w-1/2 lg:w-4/5 lg:ml-12 w-1/2 xs:hidden sm:block"
+        >
           <Image src={heroImage} alt="hero-image" />
-        </div>
+        </motion.div>
       </div>
     </header>
   );

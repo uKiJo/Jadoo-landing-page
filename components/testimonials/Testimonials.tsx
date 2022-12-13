@@ -14,17 +14,12 @@ import { useViewport } from './hooks';
 const Testimonials: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [height, viewport] = useViewport(ref);
-  // const [containerHeight, setcontainerHeight] = useState(
-  //   ref.current?.clientHeight
-  // );
-  // const [viewport, setViewport] = useState(0);
+
   const [[active, next, direction], setActive] = useState([0, 1, 0]);
   const [isDisabled, setIsDisabled] = useState([false, false]);
 
   const ind = wrap(0, reviews.length, active);
   const nxt = wrap(0, reviews.length, next);
-
-  console.log(height, viewport);
 
   const paginate = (newDirection: number) => {
     setActive([active + newDirection, next + newDirection, newDirection]);
