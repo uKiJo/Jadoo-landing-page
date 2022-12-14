@@ -62,10 +62,7 @@ const Navbar = () => {
             animate={smallScreen && 'closed'}
             exit={smallScreen ? 'exit' : ''}
           >
-            <motion.button
-              // variants={navItem}
-              className=" flex justify-end lg:hidden p-4"
-            >
+            <motion.button className=" flex justify-end lg:hidden p-4">
               <RiCloseFill onClick={() => setOpen(false)} size={30} />
             </motion.button>
             <motion.ul className="flex xs:pb-4 lg:pb-0 xs:h-fit lg:h-fit xs:justify-center xs:grow xs:flex-col lg:flex-row items-center">
