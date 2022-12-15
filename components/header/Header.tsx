@@ -5,14 +5,13 @@ import heroImage from '../../public/Traveller 1.svg';
 import plane from '../../public/plane.svg';
 
 import { RiPlayCircleFill } from 'react-icons/ri';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      // delayChildren: 0.5,
       staggerChildren: 0.1,
     },
   },
@@ -24,10 +23,21 @@ const text = {
 };
 
 const Header: React.FC = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 300], [0, -100]);
+  const y2 = useTransform(scrollY, [0, 300], [0, -600]);
+
   return (
     <header className="flex flex-col justify-center md:w-3/4 xs:w-full mx-auto mb-32">
       <div className="relative flex justify-between ">
-        <div className="font-poppins flex flex-col justify-start xl:w-[545px] lg:w-[420px] md:w-80 sm:w-64 ">
+        <motion.div
+          style={{ y: y1 }}
+          variants={container}
+          initial="hidden"
+          animate="show"
+          // onViewportLeave={() => console.log(setexitViewport(true))}
+          className="font-poppins flex flex-col justify-start xl:w-[545px] lg:w-[420px] md:w-80 sm:w-64 "
+        >
           <motion.div variants={container} initial="hidden" animate="show">
             <motion.h2
               variants={text}
@@ -54,20 +64,27 @@ const Header: React.FC = () => {
               west hard for the.
             </motion.p>
           </motion.div>
-          <motion.div variants={text} className="flex ">
-            <CustomButton styling="bg-yellow lg:py-4 lg:px-6 xs:py-2 xs:px-4 rounded-lg text-sm text-white mr-8 find-btn">
-              Find out more
-            </CustomButton>
-            <div className="flex items-center cursor-pointer">
+          <div className="flex ">
+            <motion.div variants={text} transition={{ duration: 1 }}>
+              <CustomButton styling="bg-yellow lg:py-4 lg:px-6 xs:py-2 xs:px-4 rounded-lg text-sm text-white mr-8 find-btn">
+                Find out more
+              </CustomButton>
+            </motion.div>
+            <motion.div
+              variants={text}
+              transition={{ duration: 1 }}
+              className="flex items-center cursor-pointer"
+            >
               <RiPlayCircleFill
                 className="fill-heading1 mr-4 play-btn"
                 size={52}
               />
               <span className="text-paragraph font-medium">Play Demo</span>
-            </div>
-          </motion.div>
-        </div>
+            </motion.div>
+          </div>
+        </motion.div>
         <motion.div
+          style={{ y: y2 }}
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
