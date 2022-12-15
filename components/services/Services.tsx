@@ -3,20 +3,47 @@ import Category from '../category/Category';
 import Subtitle from '../shared/Subtitle';
 import Title from '../shared/Title';
 
+import { motion } from 'framer-motion';
+
 import data from './data';
 
-interface ServicesProps {}
+const container = {
+  show: {
+    opacity: 1,
 
-const Services: React.FC<ServicesProps> = (props) => {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const Services: React.FC = () => {
   return (
-    <section className="md:w-3/4 mx-auto text-center mb-32 bg">
-      <Subtitle>Category</Subtitle>
-      <Title>We Offer Best Services</Title>
-      <div className="flex flex-wrap md:justify-between xs:justify-around">
+    <section className="md:w-3/4 mx-auto text-center mb-32 pt-12 bg">
+      <motion.div
+        initial={{ x: 900 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Subtitle>Category</Subtitle>
+      </motion.div>
+      <motion.div
+        initial={{ x: -900 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Title>We Offer Best Services</Title>
+      </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        className="flex flex-wrap md:justify-between xs:justify-around"
+      >
         {data.map((category) => (
           <Category key={category.id} {...category} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

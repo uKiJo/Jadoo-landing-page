@@ -35,7 +35,6 @@ const Header: React.FC = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          // onViewportLeave={() => console.log(setexitViewport(true))}
           className="font-poppins flex flex-col justify-start xl:w-[545px] lg:w-[420px] md:w-80 sm:w-64 "
         >
           <motion.div variants={container} initial="hidden" animate="show">
@@ -85,7 +84,7 @@ const Header: React.FC = () => {
         </motion.div>
         <motion.div
           style={{ y: y2 }}
-          initial={{ opacity: 0, x: -10 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           className="xl:w-1/2 lg:w-4/5 lg:ml-12 w-1/2 xs:hidden sm:block"

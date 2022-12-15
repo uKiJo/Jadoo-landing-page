@@ -13,7 +13,7 @@ body {
 
 
 body {
-
+  /* overflow: hidden; */
   background-image: url('../public//Decore.svg');
   background-repeat: no-repeat;
   background-size: 50%;
