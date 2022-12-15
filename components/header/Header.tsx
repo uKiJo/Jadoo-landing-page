@@ -29,7 +29,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="flex flex-col justify-center md:w-3/4 xs:w-full mx-auto mb-32">
-      <div className="relative flex justify-between ">
+      <div className="relative flex justify-between -z-10">
         <motion.div
           style={{ y: y1 }}
           variants={container}
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
           initial={{ opacity: 0, x: -800, y: 800 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute right-0 lg:top-10 sm:top-0 -z-10"
+          className="absolute right-0 lg:top-10 sm:top-0 -z-20"
         >
           <Image
             className="xs:hidden sm:block sm:w-28 xl:w-48"
