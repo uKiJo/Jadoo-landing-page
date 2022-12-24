@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Image, { StaticImageData } from 'next/image';
+import { motion } from 'framer-motion';
 
 interface BookStepProps {
   id: number;
@@ -8,10 +9,23 @@ interface BookStepProps {
   title: string;
 }
 
+const text = {
+  hidden: { x: -800 },
+  show: {
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
 const BookStep: React.FC<BookStepProps> = (props) => {
   const { title, image } = props;
   return (
-    <div className="flex font-poppins xl:mb-12 xs:mb-8 xl:w-[415px] lg:w-80">
+    <motion.div
+      className="flex font-poppins xl:mb-12 xs:mb-8 xl:w-[415px] lg:w-80"
+      variants={text}
+    >
       <div className=" flex items-start xs:w-14 md:w-24 md:mr-8 xs:mr-4">
         <Image src={image} alt={title} className="w-full" />
       </div>
@@ -24,7 +38,7 @@ const BookStep: React.FC<BookStepProps> = (props) => {
           tempus.
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -8,8 +8,8 @@ interface SubscribeProps {}
 
 const Subscribe: React.FC<SubscribeProps> = (props) => {
   return (
-    <section className="flex justify-center mb-24 lg:h-[492px] md:h-96">
-      <div className="w-section relative xs:w-11/12">
+    <section className="flex justify-center mb-24 mx-auto md:w-4/5 lg:w-3/4 lg:h-[492px] md:h-96">
+      <div className="relative xs:full">
         <div className="absolute rounded-full p-4 gradient-one -top-5 -right-5 z-10 flex items-center">
           <HiPaperAirplane
             size={35}

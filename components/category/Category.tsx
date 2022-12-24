@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef, RefObject } from 'react';
 import Image from 'next/image';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useParallax } from '../shared/hooks/useParallax';
 
 interface CategoryProps {
+  id: number;
   image: string;
   title: string;
   details: string;
+  ref: RefObject<HTMLDivElement>;
 }
 
 const item = {
@@ -14,10 +17,31 @@ const item = {
   show: { y: 0 },
 };
 
-const Category: React.FC<CategoryProps> = (props) => {
-  const { image, title, details } = props;
+const Category: React.FC<CategoryProps> = (props, ref) => {
+  const { image, title, details, id } = props;
+  const cat = useRef(null);
+  const y = useParallax(cat);
+  // const { scrollYProgress } = useScroll({
+  //   target: cat,
+  //   offset: ['start start', 'end start'],
+  // });
+  // const y = useTransform(
+  //   scrollYProgress,
+  //   [0, 1],
+  //   [0, -600 * (Math.random() * 4)]
+  // );
+
+  // useEffect(() => {
+  //   return scrollYProgress.onChange((latest) => {
+  //     console.log('Page scroll: ', latest);
+  //     console.log('y: ', y.get());
+  //   });
+  // }, []);
+
   return (
     <motion.div
+      ref={cat}
+      style={{ y: y }}
       variants={item}
       className="lg:w-64 lg:h-80 xs:w-56 xs:h-72 flex flex-col items-center rounded-3xl  md:mb-12 xs:mb-6 box-shadow  cursor-pointer"
     >
