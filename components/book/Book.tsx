@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
+
 import BookStep from '../book-step/BookStep';
+import { useParallax } from '../shared/hooks/useParallax';
 import Subtitle from '../shared/Subtitle';
 import Title from '../shared/Title';
 
@@ -33,28 +35,46 @@ const text = {
 };
 
 const Book: React.FC<BookProps> = (props) => {
+  const titleRef = useRef(null);
+  const imageRef = useRef(null);
+  const bookStepRef = useRef(null);
+  const titleY = useParallax(titleRef);
+  const imageY = useParallax(imageRef);
+  const bookStepY = useParallax(bookStepRef);
   return (
     <section className="md:grid md:grid-cols-2 md:grid-rows-[h-fit] xs:flex xs:flex-col xs:justify-center mb-32 md:w-4/5 lg:w-3/4 mx-auto ">
-      <motion.div variants={container} initial="hidden" whileInView="show">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         <div className="xl:w-[511px] lg:w-[450px] md:w-full md:col-start-1 md:col-span-2 lg:col-start-1 lg:col-end-2">
           <motion.div variants={text}>
             <Subtitle>Easy and Fast</Subtitle>
           </motion.div>
-          <motion.div variants={text}>
+          <motion.div style={{ y: titleY }} ref={titleRef} variants={text}>
             <Title>Book your next trip in 3 easy steps</Title>
           </motion.div>
         </div>
-        <motion.div className="xl:w-[511px] md:w-11/12 xl:mr-28 md:mr-12 sm:w-4/5 sm:mb-8">
+        <motion.div
+          style={{ y: bookStepY }}
+          ref={bookStepRef}
+          className="xl:w-[511px] md:w-11/12 xl:mr-28 md:mr-12 sm:w-4/5 sm:mb-8"
+        >
           {data.map((book) => (
             <BookStep key={book.id} {...book} />
           ))}
         </motion.div>
       </motion.div>
       <motion.div
+        style={{ y: imageY }}
+        ref={imageRef}
         className="md:col-start-2 lg:row-end-3 lg:row-span-2 md:row-start-2 lg:self-center md:self-start xs:self-center justify-self-center relative md:w-2/3 sm:w-3/5 xs:w-4/5"
         initial={{ scale: 2.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <Image
           className="shadow-card rounded-3xl xs:w-4/5 sm:w-3/4 md:w-full xl:w-4/5"
