@@ -12,6 +12,7 @@ const container = {
     opacity: 1,
 
     transition: {
+      duration: 1,
       staggerChildren: 0.1,
     },
   },
@@ -21,7 +22,7 @@ const Services: React.FC = () => {
   const first = useRef(null);
 
   return (
-    <section className="md:w-3/4 mx-auto text-center mb-32 pt-12 bg">
+    <section className="md:w-3/4 mx-auto text-center mb-32 pt-12 bg snap-start">
       <motion.div
         ref={first}
         initial={{ x: '100%', opacity: 0 }}
