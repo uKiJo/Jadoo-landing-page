@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This project represents a simple replication of a mockup created by [Shakir Ar](https://www.arshakir.com/project/travel-agency-landing-page-freebie) into a real landing page using web technologies. The langing page has cool animations using Framer motion.
 
-### Built With
+## Built With
 
 ![Next][Next.js]
 ![Framer][Framer]
