@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import React from 'react';
-import CustomButton from '../shared/CustomButton';
-import heroImage from '../../public/Traveller 1.svg';
-import plane from '../../public/plane.svg';
+import Image from "next/image";
+import React from "react";
+import CustomButton from "../shared/CustomButton";
+import heroImage from "../../public/Traveller 1.svg";
+import plane from "../../public/plane.svg";
 
-import { RiPlayCircleFill } from 'react-icons/ri';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { RiPlayCircleFill } from "react-icons/ri";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const container = {
   hidden: { opacity: 0 },
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           </motion.div>
           <div className="flex ">
             <motion.div variants={text} transition={{ duration: 1 }}>
-              <CustomButton styling="bg-yellow lg:py-4 lg:px-6 xs:py-2 xs:px-4 rounded-lg text-sm text-white mr-8 find-btn">
+              <CustomButton styling="h-full bg-yellow lg:py-4 lg:px-6 xs:py-2 xs:px-4 rounded-lg text-sm text-white mr-8 find-btn">
                 Find out more
               </CustomButton>
             </motion.div>
