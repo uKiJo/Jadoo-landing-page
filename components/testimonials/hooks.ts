@@ -1,6 +1,6 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from "react";
 
-export const useViewport = (ref: RefObject<HTMLDivElement>) => {
+export const useViewport = (ref: RefObject<HTMLDivElement | null>) => {
   const [containerHeight, setcontainerHeight] = useState(
     ref.current?.clientHeight
   );
@@ -8,22 +8,22 @@ export const useViewport = (ref: RefObject<HTMLDivElement>) => {
   const [refState, setRefState] = useState(ref);
 
   useEffect(() => {
-    window.addEventListener('resize', updateDimensions);
+    window.addEventListener("resize", updateDimensions);
     setViewport(window.innerWidth);
     setcontainerHeight(ref.current?.clientHeight);
     console.log(ref.current);
-    setRefState(ref.current);
+    // setRefState(ref.current);
 
     return () => {
-      console.log('dismount');
-      window.removeEventListener('resize', updateDimensions);
+      console.log("dismount");
+      window.removeEventListener("resize", updateDimensions);
     };
   }, [containerHeight, viewport]);
 
   const updateDimensions = () => {
     setViewport(window.innerWidth);
     if (ref.current) setcontainerHeight(ref.current.clientHeight);
-    console.log('update dimension fired!');
+    console.log("update dimension fired!");
     console.log(ref.current);
   };
 

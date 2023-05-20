@@ -1,25 +1,21 @@
-import Image from 'next/image';
-import React, { useState, useRef, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import Image from "next/image";
+import React, { useState, useRef, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import reviews from './review-data';
+import reviews from "./review-data";
 
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { GoPrimitiveDot } from 'react-icons/go';
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { GoPrimitiveDot } from "react-icons/go";
 
-import Subtitle from '../shared/Subtitle';
-import Title from '../shared/Title';
-import { useViewport } from './hooks';
+import Subtitle from "../shared/Subtitle";
+import Title from "../shared/Title";
 
 const Testimonials: React.FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [height, viewport] = useViewport(ref);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const [[active, next, direction], setActive] = useState([0, 1, 0]);
-  const [isDisabled, setIsDisabled] = useState([false, false]);
 
   const ind = wrap(0, reviews.length, active);
-  const nxt = wrap(0, reviews.length, next);
 
   const paginate = (newDirection: number) => {
     setActive([active + newDirection, next + newDirection, newDirection]);
@@ -38,7 +34,7 @@ const Testimonials: React.FC = () => {
               <motion.div key={i}>
                 <GoPrimitiveDot
                   className={`mr-6 h-6 w-6 ${
-                    ind === i ? 'fill-primary' : 'fill-slate-200'
+                    ind === i ? "fill-primary" : "fill-slate-200"
                   }`}
                 />
               </motion.div>

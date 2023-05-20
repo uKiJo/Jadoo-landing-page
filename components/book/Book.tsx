@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import React, { useRef } from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React, { useRef } from "react";
 
-import BookStep from '../book-step/BookStep';
-import { useParallax } from '../shared/hooks/useParallax';
-import Subtitle from '../shared/Subtitle';
-import Title from '../shared/Title';
+import BookStep from "../book-step/BookStep";
+import { useParallax } from "../shared/hooks/useParallax";
+import Subtitle from "../shared/Subtitle";
+import Title from "../shared/Title";
 
-import image1 from './assets/image1.svg';
-import image2 from './assets/image2.svg';
+import image1 from "./assets/image1.svg";
+import image2 from "./assets/image2.svg";
 
-import data from './data';
+import data from "./data";
 
 interface BookProps {}
 
@@ -70,7 +70,7 @@ const Book: React.FC<BookProps> = (props) => {
       <motion.div
         style={{ y: imageY }}
         ref={imageRef}
-        className="md:col-start-2 lg:row-end-3 lg:row-span-2 md:row-start-2 lg:self-center md:self-start xs:self-center justify-self-center relative md:w-2/3 sm:w-3/5 xs:w-4/5"
+        className="md:self-center md:self-start xs:self-center justify-self-center relative md:w-2/3 sm:w-3/5 xs:w-4/5"
         initial={{ scale: 2.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
